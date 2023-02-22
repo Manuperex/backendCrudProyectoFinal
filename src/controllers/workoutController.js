@@ -4,7 +4,9 @@ const Cards = require('../database/workout')
 exports.getAllWorkouts = ((req, res) => {
     Cards.find((err, docs) => {
         if(err) throw new Error(err);
+        console.log(docs)
         res.json(docs);
+        
     });  
 });
 
