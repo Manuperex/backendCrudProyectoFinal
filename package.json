@@ -2,7 +2,7 @@
   "name": "crudfinal",
   "version": "1.0.0",
   "description": "Backend Crud Proyecto Final",
-  "main": "index.js",
+  "main": "./src/index.js",
   "scripts": {
     "start": "node ./src/index.js",
     "dev": "nodemon ./src/index.js",
