@@ -5,6 +5,9 @@ const archivoBD = require('./database/connection')
 
 const app = express();
 
+const bodyParser = require('body-parser');
+app.use(bodyParser.json())
+app.use(bodyParser.urlencoded({extended: 'true'}))
 
 const PORT = process.env.PORT || 3000;
 

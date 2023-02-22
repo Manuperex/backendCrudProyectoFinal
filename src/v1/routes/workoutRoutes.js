@@ -5,13 +5,13 @@ const workoutConstroller = require('../../controllers/workoutController')
 router
     .get('/', workoutConstroller.getAllWorkouts)
 
-    .get('/:workoutId', workoutConstroller.getOneWorkouts)
+    .get('/:_id', workoutConstroller.getOneWorkouts)
 
-    .post('/:workoutId', workoutConstroller.createNewWorkouts)
+    .post('/createNewCards', workoutConstroller.createNewWorkouts)
 
-    .patch('/:workoutId', workoutConstroller.updateOneWorkouts)
+    .patch('/:_id', workoutConstroller.updateOneWorkouts)
 
-    .delete('/:workoutId', workoutConstroller.deleteOneWorkouts);
+    .delete('/deleteCard', workoutConstroller.deleteOneWorkouts);
     
 
 

@@ -1,38 +1,59 @@
-const workoutService = require('../services/workoutService')
+const Cards = require('../database/workout')
 
 
-const getAllWorkouts = (req, res) => {
-    const allWorkouts = workoutService.getAllWorkouts(res);
-    res.send({ status: "OK", data: allWorkouts})
-    
-};
+exports.getAllWorkouts = ((req, res) => {
+    Cards.find((err, docs) => {
+        if(err) throw new Error(err);
+        res.json(docs);
+    });  
+});
 
-const getOneWorkouts = (req, res) => {
-    const Workout = workoutService.getOneWorkouts(req.params.workourId);
-    res.send(`Get workouts ${req.params.workourId}`)
-};
+exports.getOneWorkouts = ((req, res) => {
+    Cards.find({_id:req.params._id}, function(docs, err){
+        if(!err){
+            res.send(docs);
+        } else {
+            res.send(err);
+        }
+    })    
+});
 
-const createNewWorkouts = (req, res) => {
-    const  createdWorkout = workoutService.createNewWorkouts(req.params.workourId);
-    res.send(`Create workouts ${req.params.workourId}`)
-};
+exports.createNewWorkouts = ((req, res) => {
+    Cards.create(req.body, function(docs, err){
+        if(!err){
+            res.send(docs);
+        } else {
+            res.send(err);
+        }
+    })    
+});
+exports.updateOneWorkouts = ((req, res) => {
+    Cards.updateOne({_id:req.params._id},{
+        title: req.body.title,
+        card_type: req.body.card_type,
+        attribute: req.body.attribute,
+        types: req.body.types,
+        level: req.body.level,
+        atk: req.body.atk,
+        def: req.body.def,
+        passcode: req.body.passcode,
+        statuses: req.body.statuses,
+        card_description: req.body.card_description
+    }, (err) => {
+        if(!err){
+            res.send('Card Update');
+        } else {
+            res.send(err);
+        }
+    })    
+});
 
-const updateOneWorkouts = (req, res) => {
-    const updatedWorkout = workoutService.updateOneWorkouts(req.params.workourId)
-    res.send(`Update workouts ${req.params.workourId}`)
-};
-
-
-const deleteOneWorkouts = (req, res) => {
-    workoutService.deleteOneWorkouts(req.params.workourId);
-    res.send(`Delete workouts ${req.params.workourId}`)
-};
-
-
-module.exports = {
-    getAllWorkouts,
-    getOneWorkouts,
-    createNewWorkouts,
-    updateOneWorkouts,
-    deleteOneWorkouts
-}
+exports.deleteOneWorkouts = ((req, res) => {
+    Cards.findOneAndDelete({_id:req.body._id}, function(docs, err){
+        if(!err){
+            res.send(docs);
+        } else {
+            res.send(err);
+        }
+    })    
+});

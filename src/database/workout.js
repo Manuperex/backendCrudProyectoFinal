@@ -1,7 +1,7 @@
 const mongoose = require('mongoose');
-const schema = mongoose.Schema
 
-const schemaCard = new schema({
+
+const schemaCard = new mongoose.Schema({
     title: String,
     card_type: String,
     attribute: String,
@@ -11,20 +11,7 @@ const schemaCard = new schema({
     def: Number,
     passcode: Number,
     statuses: String,
-    card_description: Number,
-    attribute: String
+    card_description: String
 })
 
-const ModelCard = mongoose.model('cards', schemaCard);
-
-
-
-const getAllWorkouts = () => {
-    return "Json"
-}
-
-    
-
-module.exports = {
-    getAllWorkouts
-}
+module.exports = mongoose.model('cards', schemaCard);
