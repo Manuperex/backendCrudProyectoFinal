@@ -14,6 +14,7 @@
  <p> Se instalo la heramienta cors para detener los errores de CORS.
     Para instalarlo se uso:
     <li> npm i cors
+  <p> Se creo un archivo .env para poder guardar las variables de entorno del link de la base de datos y el port de la app.
 <h2> Explicacion de carpetas:</h2>
 
 ![image](https://user-images.githubusercontent.com/104181677/220959345-9baa90ef-d746-4a16-b1c3-46e465133cc8.png)
@@ -33,5 +34,20 @@
 
 <p>En Esta imagen podemos observar la manera que se conecta con mongoDB por medio de mongoose, y se usa en vez de una url en mongoose.connect(DB_URI) se una variable de entorno para mayor seguridad, en esa variable al declararla en el archivo .env debemos colocarlo asi:
 <li> DB_URI = // informacion del link para la base de datos.
-<p> Como se uso mongoDB Atlas debemos copiar el link que nos dan cuando la queremos conectar con una aplicacion, y sustituir los valores por los nuestros. Este es el link de ejemplo:
+<p> Como se uso mongoDB Atlas debemos copiar el link que nos dan cuando la queremos conectar con una aplicacion, y sustituir los valores que estan entre <> por los nuestros. Este es el link de ejemplo:
 mongodb+srv://<TuNombreDeUsuario>:<password>@cluster1.oah05yc.mongodb.net/<nombreDeLaBaseDeDatos>?retryWrites=true&w=majority
+
+<h2>Deploy:</h2> 
+
+<p> Para hacer el deploy use la pagina web render.com, donde siguiendo los pasos para crear un Web Service conectamos la base de datos con nuestro repositorio en GitHub y le damos como variables de entorno las que tenemos en el archivo .env para que pueda correr la aplicacion.
+
+![image](https://user-images.githubusercontent.com/104181677/220977004-d045e46d-12a3-4177-b529-ac383db378f2.png)
+
+<h2>Pruebas:</h2> 
+
+<p> La aplicacion se testeo en insomnio, probando cada uno de los endpoints y funcionan correctamente.
+
+![image](https://user-images.githubusercontent.com/104181677/220977437-819b8ae6-8eb5-49b4-b587-f862cea92eb6.png)
+
+<h1>Este proyecto fue creado por Manuel Perez en el curso Programacion Web Full Stack en Educamas.</h1>
+
