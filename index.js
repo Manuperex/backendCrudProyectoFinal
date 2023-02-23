@@ -1,5 +1,5 @@
 const express = require('express');
-const v1WorkoutRouter = require('./src/v1/routes/workoutRoutes')
+const v1WorkoutRouter = require('./src/v1/routes/Routes')
 require('dotenv').config()
 
 const archivoBD = require('./src/database/connection')

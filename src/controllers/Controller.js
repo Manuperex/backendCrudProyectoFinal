@@ -1,4 +1,4 @@
-const Cards = require('../database/workout')
+const Cards = require('../database/cardsSchema')
 
 
 exports.getAllWorkouts = ((req, res) => {
@@ -49,7 +49,7 @@ exports.createNewWorkouts = ((req, res) => {
         ) {
             res.status(400).send({ status: "FAILED", data: { error: "One of the following keys is missing or is empty in request body: 'title', 'card_type', 'attribute', 'type,  'level', 'atk', 'def', 'passcode', 'statuses', 'card_description' "}});   
         } else {
-            res.status(201).send({ status: `CARD added with passcode: ${docs.passcode}`, data: docs}); 
+            res.status(201).send({ status: `Card added with passcode: ${docs.passcode}`, data: docs}); 
         }
 
         
