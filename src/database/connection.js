@@ -5,8 +5,8 @@ mongoose.connect(DB_URI);
 
 const objectdb = mongoose.connection;
 
-objectdb.on ('connected', () => {console.log('conexion correcta a MongoDB')});
-objectdb.on ('error', () => {console.log('Error en la conexion a MongoDB')});
+objectdb.on ('connected', () => {console.log('correct connection to MongoDB')});
+objectdb.on ('error', () => {console.log('Connection error a MongoDB')});
 
 
 module.exports = mongoose
