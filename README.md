@@ -1,6 +1,9 @@
 # Backend Con Express y mongoDB.
 
 <h2>Descripcion:</h2>
+<p>Este crud usara como documentos las cartas del juego TCG Yugioh, donde podremos tener los datos de las cartas de yugioh, para saber sus estadisticas y tener un control de ellas.
+    
+![image](https://user-images.githubusercontent.com/104181677/221058543-0c724c0e-ca98-4aef-94ed-5d58fb879045.png)
 <p> Es un CRUD creado con Express para el servidor, base de datos no relacional con mongoDB y se uso mongoose como ODM en el codigo.
     para instalarlo es: 
     <li> npm install express
@@ -17,7 +20,7 @@
   <p> Se creo un archivo .env para poder guardar las variables de entorno del link de la base de datos y el port de la app.
 <h2> Explicacion de carpetas:</h2>
 
-![image](https://user-images.githubusercontent.com/104181677/220959345-9baa90ef-d746-4a16-b1c3-46e465133cc8.png)
+![image](https://user-images.githubusercontent.com/104181677/221058621-db31863d-f09d-41a4-bfe1-5452e160a40b.png)
 
 <p>
 <li>Se creo index.js para iniciar el servidor y crear el endpoint principal.
