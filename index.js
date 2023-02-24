@@ -13,6 +13,6 @@ app.use(bodyParser.urlencoded({extended: 'true'}))
 
 const PORT = process.env.PORT || 3000;
 
-app.use("/api/v1/workouts", v1WorkoutRouter);
+app.use("/api/v1/cards", v1WorkoutRouter);
 
 app.listen(PORT, () => {console.log(`Server listening on port ${PORT}`) });
