@@ -3,15 +3,15 @@ const router = express.Router();
 const yugiohConstroller = require('../../controllers/Controller')
 
 router
-    .get('/', yugiohConstroller.getAllWorkouts)
+    .get('/', yugiohConstroller.getAllCards)
 
-    .get('/:_id', yugiohConstroller.getOneWorkouts)
+    .get('/:_id', yugiohConstroller.getOneCard)
 
-    .post('/createNewCards', yugiohConstroller.createNewWorkouts)
+    .post('/createNewCards', yugiohConstroller.createNewCard)
 
-    .patch('/:_id', yugiohConstroller.updateOneWorkouts)
+    .patch('/:_id', yugiohConstroller.updateOneCard)
 
-    .delete('/deleteCard', yugiohConstroller.deleteOneWorkouts);
+    .delete('/deleteCard', yugiohConstroller.deleteOneCard);
     
 
 

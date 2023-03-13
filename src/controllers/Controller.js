@@ -1,7 +1,7 @@
 const Cards = require('../database/cardsSchema')
 
 
-exports.getAllWorkouts = ((req, res) => {
+exports.getAllCards = ((req, res) => {
     Cards.find((err, docs) => {
         if(err) throw new Error(err);
         res.send({ status: "OK", data: docs});
@@ -9,7 +9,7 @@ exports.getAllWorkouts = ((req, res) => {
     });  
 });
 
-exports.getOneWorkouts = ((req, res) => {
+exports.getOneCard= ((req, res) => {
     Cards.find({_id:req.params._id}, function(docs, err){
         if(!err){
             res.send({ status: "OK", data: docs});
@@ -19,7 +19,7 @@ exports.getOneWorkouts = ((req, res) => {
     })    
 });
 
-exports.createNewWorkouts = ((req, res) => {
+exports.createNewCard = ((req, res) => {
     Cards.create(req.body, function(docs){
         docs = {
             title: req.body.title,
@@ -59,7 +59,7 @@ exports.createNewWorkouts = ((req, res) => {
     })    
 });
 
-exports.updateOneWorkouts = ((req, res) => {
+exports.updateOneCard = ((req, res) => {
     Cards.updateOne({_id:req.params._id},{
         title: req.body.title,
         card_type: req.body.card_type,
@@ -80,7 +80,7 @@ exports.updateOneWorkouts = ((req, res) => {
     })    
 });
 
-exports.deleteOneWorkouts = ((req, res) => {
+exports.deleteOneCard = ((req, res) => {
     Cards.findOneAndDelete({_id:req.body._id}, function(docs, err){
         if(!err){
             res.status(200).send({ status: `Card deleted  with ID: ${req.body._id}`});
